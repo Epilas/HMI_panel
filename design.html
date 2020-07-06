@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+	<head>
+
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/design.css">
+		<link rel="stylesheet" href="css/rangeslider.css">	
+		<link rel="stylesheet" href="css/bootstrap-toggle.min.css">
+		<link rel="stylesheet" href="css/jquery.nstSlider.css">
+		
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap-toggle.min.js"></script>
+		<script src="js/jquery.simpleWeather.js"></script>
+		<script src="js/rangeslider.js"></script>
+		<script src="js/raphael-2.1.4.min.js"></script>
+		<script src="js/justgage.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/jquery.nstSlider.js"></script>
+		<script src="js/design.js"></script>
+		
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		
+	</head>
+
+	<body class="container">
+
+	<!-- Worktable -->
+			<div id="nav">
+				<!--<a href="#" class='btnPage' onclick="pg('up')" style="color: white;" id="btn_up"><span class="glyphicon glyphicon-chevron-up" style="position: absolute; left: 50%; top: -20px;"></span></a>
+				<a href="#" class='btnPage' onclick="pg('left')" style="color: white;" id ="btn_left"><span class="glyphicon glyphicon-chevron-left" style="position: absolute; top: 50%; left: -20px;"></span></a>
+				 -->
+				<div style="position: absolute; left: 0%; top: -20px; color: black;">
+					<select id="pageSelect">
+						<option value='1' selected="selected">Page 1</option>
+						<option value='2'>Page 2</option>
+						<option value='3'>Page 3</option>
+						<option value='4'>Page 4</option>
+						<option value='5'>Page 5</option>
+						<option value='6'>Page 6</option>
+						<option value='7'>Page 7</option>
+						<option value='8'>Page 8</option>
+					</select>
+				</div>
+				<div id="worktable">
+					<div id="page1"></div>
+					<div id="page2"style="display: none;"></div>
+					<div id="page3"style="display: none;"></div>
+					<div id="page4"style="display: none;"></div>
+					<div id="page5"style="display: none;"></div>
+					<div id="page6"style="display: none;"></div>
+					<div id="page7"style="display: none;"></div>
+					<div id="page8"style="display: none;"></div>
+				</div>
+			
+			</div>	
+		
+			<div id="start">
+			<h1><span class="glyphicon glyphicon-th"></span><br>Edytor</h1>
+				<div class="panel-body">
+					<a class="btn" style="width: 200px;" onclick='startApp();'><h3><span class="glyphicon glyphicon-edit"></span></h3>Stwórz nowy projekt</a>
+					<a class="btn" style="width: 200px;" onclick='load();'><h3><span class="glyphicon glyphicon-folder-open"></span></h3>Otwórz już istniejącą</a>
+				</div>
+				<br>
+				<small>©2017 H&M</small>
+			</div>
+			
+		</div>
+	<!-- Worktable -->
+	
+	<!-- Toolbox -->
+		<div id="toolbox">		
+			<div id="toolbox-handle">
+				<span class="glyphicon glyphicon-wrench"></span> TOOLBOX
+			</div>
+
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingOne">
+						<h4 class="panel-title" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+							Podstawowe
+						</h4>
+					</div>
+					
+					<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+						<div class="panel-body">
+
+								<a class="btn newObject" onclick="newObject('new','text')"><span class=" glyphicon glyphicon-font"> Text</span></a> 
+								<a class="btn newObject" onclick="newObject('new','button')"><span class="glyphicon glyphicon-bold"> Button</span></a>
+								<a class="btn newObject" onclick="newObject('new','image')"><span class="glyphicon glyphicon-picture"> Image</span></a>
+								<a class="btn newObject" onclick="newObject('new','square')"><span class="glyphicon glyphicon-stop"> Square</span></a>
+								<a class="btn newObject" onclick="newObject('new','variable')"><span class="glyphicon glyphicon-usd"> Variable</span></a>
+								<a class="btn newObject" onclick="newObject('new','switch')"><span class="glyphicon glyphicon-adjust"> Switch</span></a>
+								<a class="btn newObject" onclick="newObject('new','range')"><span class="glyphicon glyphicon-resize-horizontal"> Range</span></a>
+								<a class="btn newObject" onclick="newObject('new','tslider')"><span class="glyphicon glyphicon-resize-horizontal"> Time Slider</span></a>
+								<a class="btn newObject" onclick="newObject('new','panel')"><span class="glyphicon glyphicon-list-alt"> Panel</span></a>
+								<a class="btn newObject" onclick="newObject('new','glyph')"><span class="glyphicon glyphicon-asterisk"> Glyphicon</span></a>
+								<a class="btn newObject" onclick="newObject('new','menubtn')"><span class="glyphicon glyphicon-log-in"> Przycisk menu</span></a>
+								<a class="btn newObject" onclick="newObject('new','showhide')"><span class="glyphicon glyphicon-log-in"> Show hide</span></a>
+								<a class="btn newObject" onclick="newObject('new','boolimg')"><span class="glyphicon glyphicon-log-in"> Boolen Image</span></a>
+								<a class="btn newObject" onclick="newObject('new','booltxt')"><span class="glyphicon glyphicon-log-in"> Boolen Text</span></a>
+								<a class="btn newObject" onclick="newObject('new','selvar')"><span class="glyphicon glyphicon-log-in"> Selected variable</span></a>
+								<a class="btn newObject" onclick="newObject('new','selvarbtn')"><span class="glyphicon glyphicon-log-in"> Selected variable btn</span></a>
+								<a class="btn newObject" onclick="newObject('new','anim')"><span class="glyphicon glyphicon-picture"> Animowany obrazek</span></a>
+								<a class="btn newObject" onclick="newObject('new','textList')"><span class="glyphicon glyphicon-picture"> Tekst Lista</span></a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingTwo">
+						<h4 class="panel-title" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Wzkaźniki
+						</h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+						<div class="panel-body">
+							
+							<a class="btn newObject" onclick="newObject('new','diode')"><img src="images/OFF.png" width="25px" height="25px"/> Dioda</a>
+							<a class="btn newObject" onclick="newObject('new','grafana')"><img src="images/grafana_icon.SVG" width="25px" height="25px"/> Wykres Grafana</a>
+							<a class="btn newObject" onclick="newObject('new','progressbar')"><div class="progress-bar progress-bar-success" role="progressbar" style="width: 40px">66%</div>Pasek postępu</a>
+							<a class="btn newObject" onclick="newObject('new','gauge')"><img src="http://angularscript.com/wp-content/uploads/2015/05/Simple-Radial-Gauge-with-AngularJS-and-SVG.jpg" width="25px" height="25px"/> Gauge</a>
+							<a class="btn newObject" onclick="newObject('new','donut')"><img src="https://cdn0.iconfinder.com/data/icons/lineato-food/128/food_drink-02-512.png" width="25px" height="25px"/> Donut</a>
+							<a class="btn newObject" onclick="newObject('new','clock')"><span class='glyphicon glyphicon-time'> Zegar</span></a>
+							<a class="btn newObject" onclick="newObject('new','date')"><span class='glyphicon glyphicon-calendar'> Data</span></a>
+							<a class="btn newObject" onclick="newObject('new','weather')"><span class='glyphicon glyphicon-cloud'> Pogoda</span></a>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+	<!-- Toolbox -->
+	
+	<!-- Options -->
+		<div id="options">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default" onclick="save()"><span class="glyphicon glyphicon-save"> Zapisz</span></button>
+				<button type="button" class="btn btn-default" onclick="variables()"><span class="glyphicon glyphicon-tasks"></span>Zmienne</button>
+				<div class="btn-group dropup">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="glyphicon glyphicon-cog"></span> Opcje <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#" onclick="$('#newApp').modal('show');"><span class="glyphicon glyphicon-edit"></span> Edytuj parametry</a></li>
+						<li><a href="#" onclick="$('#openHab').modal('show');"><span class="glyphicon glyphicon-link"></span> Ustaw openHAB</a></li>
+						<li><a href="#" onclick="loadApp();"><span class="glyphicon glyphicon-folder-open"></span> Otwórz projekt</a></li>
+						<li><a href="#" onclick="shareApp();"><span class="glyphicon glyphicon-share"></span> Udostępnianie</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-th"></span> Siatka <input id="grid" type="checkbox" class="pull-right"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	<!--Options -->
+	
+	<!-- Modals -->
+		<div class="modal fade bs-example-modal-sm " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="newApp">
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-edit"></span> Edytuj parametry</h4>
+					</div>
+					<div class="modal-body">
+						<form role="form" data-toggle="validator" id="newApp" onsubmit="return false;">
+							
+							<div class="form-group">
+								<label>Wymiary</label>
+								<input type="number" class="form-control" placeholder="Szerokość"   maxlength="4" id="appWidth" required>
+								<input type="number" class="form-control" placeholder="Wysokość"   maxlength="4" id="appHeight" required>
+							</div>
+							
+							<div class="form-group">
+								<label>Kolor tła</label>
+								<input type="color" class="form-control" placeholder="Kolor tła" id="appColor">
+							</div>
+							
+							<div class="form-group">
+								<label>Grafika tła</label>
+								<input type="text" class="form-control" placeholder="Grafiia tła" id="appGif">
+							</div>
+								
+			
+					</div>
+							<div class="modal-footer">
+									<button class="btn btn-default" type="submit">Zapisz</button>
+							</div>
+						</form>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade bs-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="variableModal">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						 <div class="pull-right"><button class="btn btn-default" onclick="addVar()"><span class="glyphicon glyphicon-plus"> </span>Dodaj nową zmienną</button></div><h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-tasks"></span> Tablica zmiennych</h4>
+					</div>
+					<div class="modal-body">
+								
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade bs-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="openApp">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-folder-open"></span> Otwórz aplikację</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Kod json: </label>
+							<textarea cols="80" rows="5" id="loadScript" style="color: black;"></textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-default" type="submit" onclick="loadApp()">Otwórz</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="shareApp">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-share"></span> Udostępnij</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Kod json: </label>
+							<textarea cols="80" rows="5" id="scriptApp" style="color: black;"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="openHab">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-link"></span> Ustawienia openHAB</h4>
+					</div>
+					<div class="modal-body">						
+							<div class="form-group">
+								<label>Adres</label>
+								<input type="text" class="form-control" placeholder="Adres openHAB" id="openHabAddr">
+							</div>
+								
+			
+					</div>
+							<div class="modal-footer">
+									<button class="btn btn-default" type="submit" onclick="setOpenHab()">Zapisz</button>
+							</div>
+		
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	<!-- Modals -->
+	</div>
+	</body>
+
+</html>

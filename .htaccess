@@ -1,0 +1,8 @@
+RewriteEngine on
+
+RewriteCond %{REMOTE_ADDR} !^(51\.15\.133\.99)$
+
+RewriteRule ^design$ design.html [L]
+RewriteRule ^app-([A-Za-z0-9]+)$ app.html 
+
+Header set Access-Control-Allow-Origin "*"
